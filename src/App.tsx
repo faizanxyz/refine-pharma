@@ -1,9 +1,17 @@
-import { Typography } from "@mui/material"
+import './App.css'
+import Nav from './components/navbar/navbar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 function App() {
+
   return (
     <>
-    <Typography variant="h1">kjdsjsflgkjgls</Typography>
-      
+    <Router>
+      <Routes>
+        <Route path='/' element={<Nav />}/>
+      </Routes>
+    </Router>
+    
     </>
   )
 }
