@@ -6,7 +6,7 @@ const Container = styled(Box)({
     backgroundColor: '#262627;',
     color:'white',
     display:'flex',
-    paddingLeft:'15px',
+    padding:'0px 30px 0px 15px',
     alignItems:'center'
   });
   const LogoBox = styled(Box)({

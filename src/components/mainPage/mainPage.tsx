@@ -1,7 +1,9 @@
+import Nav from "../navbar/navbar"
+
 function MainPage(){
     return(
         <>
-       <h1>ok</h1> 
+       <Nav/>
         </>
     )
 }

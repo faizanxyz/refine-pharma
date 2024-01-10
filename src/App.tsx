@@ -1,5 +1,5 @@
 import './App.css'
-import Nav from './components/navbar/navbar'
+import MainPage from './components/mainPage/mainPage'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
     <Router>
       <Routes>
-        <Route path='/' element={<Nav />}/>
+        <Route path='/' element={<MainPage />}/>
       </Routes>
     </Router>
     
