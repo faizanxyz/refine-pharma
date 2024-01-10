@@ -1,6 +1,5 @@
 import { Box , Typography, styled, Button } from "@mui/material";
 
-
 const Container = styled(Box)({
     height: '65px',
     backgroundColor: '#262627;',
