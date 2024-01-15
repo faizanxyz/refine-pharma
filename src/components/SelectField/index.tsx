@@ -18,8 +18,8 @@ function SelectField({optionsData}: SelectFieldProps){
 return(
     <Box>
     <label htmlFor="mySelect" style={{ paddingLeft: '10px', color: '#848485', 
-fontSize: '16px', fontWeight: '400' }}>
-      my label :
+fontSize: '16px', fontWeight: '400', }}>
+      Website :
     </label>
     <Select
     theme={(theme) => ({
@@ -40,15 +40,16 @@ selectedOption)}
       styles={{
         control: (provided) => ({
           ...provided,
-          height: '18px',
-          paddingLeft: '7px',
-          fontSize: '16px',
-          gap:'10px', 
+          height: '35px', 
+          fontSize: '16px', 
+          width:'325px',
+          borderRadius:'6px'
           
         }),
         menu: (provided) => ({ 
             ...provided,
             color:'black',
+           
         }), 
       }}
     />

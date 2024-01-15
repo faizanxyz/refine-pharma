@@ -5,7 +5,6 @@ import { Box, styled, Typography } from "@mui/material";
 const Parent = styled(Box)({
     width: '715px',
     height: '481px',
-    marginLeft: '20px',
     marginTop: '10px',
     backgroundColor:'white'
 
@@ -52,7 +51,7 @@ const DashbordLowerSec = () => {
                 </Box>
 
                 <Box sx={{ width: '553px', height: '61px', marginTop: '21px' }}>
-                    <Typography variant='h3'>Lorem ipsum dolor sit amet consectetur. Urna nec amet at malesuada sed.
+                    <Typography variant='h5'>Lorem ipsum dolor sit amet consectetur. Urna nec amet at malesuada sed.
                         Ac vestibulum magna purus potenti ornare volutpat est. Habitant venenatis egestas quis hendrerit.</Typography>
                 </Box>
                 <Box>
@@ -65,7 +64,7 @@ const DashbordLowerSec = () => {
                         }}
                     >
                         <img src="/assets/dashboard_tick.svg" alt="" />
-                        <Typography variant='h3'>Pulvinar nunc ultrices aliquet fames sit arcu orci.</Typography>
+                        <Typography variant='h5'>Pulvinar nunc ultrices aliquet fames sit arcu orci.</Typography>
                     </Box>
                     <Box
                         sx={{
@@ -76,7 +75,7 @@ const DashbordLowerSec = () => {
                         }}
                     >
                         <img src="/assets/dashboard_tick.svg" alt="" />
-                        <Typography variant='h3'>Pulvinar nunc ultrices aliquet fames sit arcu orci.</Typography>
+                        <Typography variant='h5'>Pulvinar nunc ultrices aliquet fames sit arcu orci.</Typography>
                     </Box>
                     <Box
                         sx={{
@@ -86,7 +85,7 @@ const DashbordLowerSec = () => {
                         }}
                     >
                         <img src="/assets/dashboard_tick.svg" alt="" />
-                        <Typography variant='h3'>Pulvinar nunc ultrices aliquet fames sit arcu orci.</Typography>
+                        <Typography variant='h5'>Pulvinar nunc ultrices aliquet fames sit arcu orci.</Typography>
                     </Box>
                     <Box
                         sx={{
@@ -96,7 +95,7 @@ const DashbordLowerSec = () => {
                         }}
                     >
                         <img src="/assets/dashboard_tick.svg" alt="" />
-                        <Typography variant='h3'>Pulvinar nunc ultrices aliquet fames sit arcu orci.</Typography>
+                        <Typography variant='h5'>Pulvinar nunc ultrices aliquet fames sit arcu orci.</Typography>
                     </Box>
                 </Box>
                 <Buttoni>

@@ -219,7 +219,7 @@ export default function MiniDrawer() {
         </List>
        
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 2, p: 3 ,backgroundColor:'#F1F2F4',height:'100vh'}}>
+      <Box component="main" sx={{ flexGrow: 2, p: 3 ,backgroundColor:'#F1F2F4'}}>
         <DrawerHeader />
         <Box >
           <Outlet/>
