@@ -31,12 +31,12 @@ const DashCard: React.FC<DashboardComponentProps> = ({ orderImage, card_heading,
           {card_heading}
         </Typography>
         <Box>
-          <Typography variant="h3" sx={{ width: '247px', height: '40px' }}>
+          <Typography variant="h5" sx={{ width: '247px', height: '40px' }}>
             Lorem ipsum dolor sit amet. dolor <br /> sit ame Lorem ipsum dolor sit amet.
           </Typography>
           <Box sx={{ display: 'flex', gap: '5px' }}>
             <img src="/assets/Vector.svg" alt="" />
-            <Typography variant="h3" sx={{
+            <Typography variant="h5" sx={{
               width: '247px',
               height: '40px',
               paddingTop: '10px',
