@@ -1,4 +1,5 @@
-import Nav from "../navbar/navbar"
+import Nav from "../Navbar/navbar"
+
 
 function MainPage(){
     return(
