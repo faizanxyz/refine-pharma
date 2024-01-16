@@ -1,9 +1,10 @@
 import { Box, styled } from '@mui/system';
 import Typography from '@mui/material/Typography';
-import TopTrend from './dashboardRightSidebar';
+
 import DashbordLowerSec from './dashboardPointListing';
-import RightbarCard from './dashboardRightSidebar';
+import TopTrend from './dashboardRightSidebar';
 import Divider from '@mui/material/Divider';
+import RecipeReviewCard from './myCard';
 
 const Boxhead = styled(Box)({
     display: 'flex',
@@ -32,11 +33,11 @@ const Dashboard: React.FC = () => {
                     <Box>
 
                         <Box sx={{ display: 'flex', gap: '13px', flexWrap: 'wrap' }}>
-                            <RightbarCard
+                            <RecipeReviewCard
                             />
-                            <RightbarCard />
-                            <RightbarCard />
-                            <RightbarCard />
+                            <RecipeReviewCard />
+                            <RecipeReviewCard />
+                            <RecipeReviewCard />
                             <Box>
                                 <DashbordLowerSec />
                             </Box>
@@ -53,16 +54,12 @@ const Dashboard: React.FC = () => {
                     </Box>
                     <Divider />
 
-                    <TopTrend />
-                    <Divider />
-                    <TopTrend />
-                    <Divider />
-                    <TopTrend />
-                    <Divider />
-                    <TopTrend />
-                    <Divider />
+                    <TopTrend /><Divider />
+                    <TopTrend /><Divider />
+                    <TopTrend /><Divider />
+                    <TopTrend /><Divider />
+
                     <Box sx={{ display: 'flex', backgroundColor: 'white', height: '6%' }}>
-                        <Typography variant="h4">Overall Status</Typography>
                         <Typography variant="h4">Overall Status</Typography>
 
 
