@@ -16,7 +16,7 @@ function SelectField({optionsData}: SelectFieldProps){
     const options = optionsData
 
 return(
-    <Box>
+    <Box sx={{width:'100%'}}>
     <label htmlFor="mySelect" style={{ paddingLeft: '10px', color: '#848485', 
 fontSize: '16px', fontWeight: '400', }}>
       Website :
@@ -42,7 +42,7 @@ selectedOption)}
           ...provided,
           height: '35px', 
           fontSize: '16px', 
-          width:'325px',
+          width:'100%',
           borderRadius:'6px'
           
         }),

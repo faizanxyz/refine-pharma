@@ -17,8 +17,9 @@ const CustomCardContent = styled(CardContent)({
     alignItems:'center'
 
   });
+  
 
-export default function RightbarCard() {
+function TopTrend() {
 
 
   return (
@@ -47,3 +48,4 @@ export default function RightbarCard() {
     </Card>
   );
 }
+export default TopTrend

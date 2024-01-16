@@ -10,8 +10,8 @@ const Boxhead = styled(Box)({
   justifyContent: 'space-between',
   alignItems: 'center',
   borderBottom: '1px solid #CFD8E3',
-  backgroundColor:'white',
-  width:'100%'
+  width:'100%',
+  padding:'8px 24px'
   
 });
 
@@ -21,37 +21,6 @@ const Boxcustom = styled(Button)({
   
 });
 
-const Boxtext = styled(Box)({
-  display: 'flex',
-  justifyContent:'space-between',
-  alignItems: 'center',
-  // marginRight: '20px',
-  // marginTop: '10px',
-  paddingTop:'30px'
-
- 
- 
-});
-
-const Boxtextsec = styled(Box)({
-  marginTop: '20px',
-  // marginRight: '20px',
-  display: 'flex',
-  justifyContent:'space-between',
-  gap: '20px',
-  alignItems: 'center',
- 
- 
-  
-
-});
-const BoxOrder = styled(Box)({
-  backgroundColor:'white',
-  paddingLeft:'24px',
-  paddingRight:'24px',
-  paddingBottom:'30px'
-  
-})
 
 function Order() {
   const options = [ 
@@ -63,6 +32,7 @@ function Order() {
   ];
   return (
     <>
+        <Box sx={{backgroundColor:'white',borderRadius:'5px'}}>
           <Boxhead>
         <Typography variant="h3" style={{ fontSize: '20px'}}>
           Search
@@ -79,26 +49,22 @@ function Order() {
           </Button>
         </Boxcustom>
       </Boxhead>
-    <BoxOrder>
 
+      <Box sx={{display:'flex',flexDirection:'column',gap:'20px',p:'30px'}}>
+      <Box sx={{display:'flex',columnGap:'15px'}}>
+      <Box sx={{width:'100%'}}><SelectField optionsData={options}/></Box>
+      <Box sx={{width:'100%'}}><UseFormControl label='data1'/></Box>
+      <Box sx={{width:'100%'}}><UseFormControl label='data1'/></Box>
+      </Box>
 
-      <Boxtext>
-      <SelectField  optionsData={options}/>
-        <Box>
-          <UseFormControl  label="Website Order ID:" />
-        </Box>
-        <Box>
-          <UseFormControl label="Order Number:" />
-        </Box>
-      </Boxtext>
-      <Boxtextsec>
-       <SelectField optionsData={options} />
-       <SelectField optionsData={options}/>
-        <Box>
-          <UseFormControl label="Customer Name:" />
-        </Box>
-      </Boxtextsec>
-      </BoxOrder>
+      <Box sx={{display:'flex',columnGap:'15px'}}>
+      <Box sx={{width:'100%'}}><SelectField optionsData={options}/></Box>
+      <Box sx={{width:'100%'}}><SelectField optionsData={options}/></Box>
+      <Box sx={{width:'100%'}}><UseFormControl label='data1'/></Box>
+      </Box>
+      </Box>
+      </Box>
+      
     </>
   );
 }
