@@ -27,7 +27,7 @@ const Login: React.FC = () => {
                 width="380px"
             >
                 <Box>
-                    <img src="./assets/Layer_1.png" style={{ padding: '12.13px', gap: '12.13px' }} />
+                    <img src="/assets/maxeniusBgRemove.svg" style={{ padding: '12.13px', gap: '12.13px' }} />
                     <Box
                         component="form"
                         sx={{

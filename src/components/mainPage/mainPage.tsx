@@ -1,10 +1,10 @@
-import Nav from "../Navbar/navbar"
+import MiniDrawer from "../navbar/navbar"
 
 
 function MainPage(){
     return(
         <>
-       <Nav/>
+       <MiniDrawer/>
         </>
     )
 }
