@@ -1,4 +1,4 @@
-import MiniDrawer from "../Navbar/navbar"
+import MiniDrawer from "../navbar/navbar"
 
 
 function MainPage(){

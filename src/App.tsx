@@ -1,5 +1,5 @@
 import './App.css';
-import MainPage from './Components/MainPage/mainPage';
+import MainPage from './Components/mainPage/mainPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './Components/Dashboard';
 import Login from './Components/Login';
