@@ -2,9 +2,7 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import { styled } from '@mui/system';
 import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 
 const CustomCardContent = styled(CardContent)({
     padding: '0px 16px 16px 70px',
@@ -17,19 +15,23 @@ const CustomCardContent = styled(CardContent)({
     alignItems:'center'
 
   });
+
+  const CustomCard = styled(Card)({
+    borderRadius:'0',
+    boxShadow:'none'
+
+  });
   
 
 function TopTrend() {
 
 
   return (
-    <Card sx={{ maxWidth: '100%' }}>
+    <CustomCard sx={{ maxWidth: '100%' }}>
       <CustomCardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
+      avatar={
+        <img src='/assets/icons/TopProductIcon.svg' style={{width:'46px' , height:' 65px'}} />
+      }
 
         title="RC5776425"
       />
@@ -45,7 +47,7 @@ function TopTrend() {
         </Typography>
       </CustomCardContent>
 
-    </Card>
+    </CustomCard>
   );
 }
 export default TopTrend

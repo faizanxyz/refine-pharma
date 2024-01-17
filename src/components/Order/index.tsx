@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import UseFormControl from '../CustomInput/input';
 import SelectField from '../SelectField';
+import OrderResult from '../OrderResult';
 
 const Boxhead = styled(Box)({
   display: 'flex',
@@ -65,6 +66,9 @@ function Order() {
       </Box>
       </Box>
       
+      <Box>
+        <OrderResult />
+      </Box>
     </>
   );
 }

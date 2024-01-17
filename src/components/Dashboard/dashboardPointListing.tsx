@@ -3,10 +3,12 @@ import { Box, styled, Typography } from "@mui/material";
 
 
 const Parent = styled(Box)({
-    width: '715px',
+    width: '100%',
     height: '481px',
     marginTop: '10px',
-    backgroundColor:'white'
+    backgroundColor:'white',
+    borderRadius:'7px'
+
 
 })
 const Parent_inner = styled(Box)({

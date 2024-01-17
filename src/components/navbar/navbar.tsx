@@ -13,6 +13,7 @@ import Container from '@mui/material/Container';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
+import { ListItemIcon } from '@mui/material';
 import { Button } from '@mui/material';
 import { Link, Outlet } from 'react-router-dom';
 
@@ -32,8 +33,16 @@ const LogoBox = styled(Box)({
       display:'flex',
       alignItems:'center'});
 
+      const NavLink = styled(Link)({
+        textDecoration:'none',
+        color:'black'
+      });
+
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
+  display:'flex',
+  alignItems:'center',
+  flexDirection:'column',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
@@ -87,6 +96,7 @@ const AppBar = styled(MuiAppBar, {
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     width: drawerWidth,
+    
     flexShrink: 0,
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
@@ -190,30 +200,30 @@ export default function MiniDrawer() {
     </AppBar>
         
       </AppBar>
-      <Drawer variant="permanent" open={open} >
+      <Drawer variant="permanent" open={open} sx={{display:'flex',flexDirection:'column',alignItems:'center'}}>
 
         <List sx={{pt:'70px'}}>
         <ListItem  disablePadding sx={{ display: 'block' }}>
-       <Link to='/mainPage/dashboard'>   <ListItemButton >
-            <Typography >Dashboard</Typography>
-          </ListItemButton></Link> 
-          <Link to='/mainPage/order'>   <ListItemButton component="a" href="#simple-list">
-            <Typography >Orders</Typography>
-          </ListItemButton></Link>
+       <NavLink to='/mainPage/dashboard'>   <ListItemButton >
+       <ListItemIcon> <img src="/assets/icons/dashboard.svg" alt="" /></ListItemIcon> <Typography >Dashboard</Typography>
+          </ListItemButton></NavLink> 
+          <NavLink to='/mainPage/order'>   <ListItemButton >
+          <ListItemIcon> <img src="/assets/icons/orderIcon.svg" alt="" /></ListItemIcon> <Typography >Orders</Typography>
+          </ListItemButton></NavLink>
           <ListItemButton component="a" href="#simple-list">
-            <Typography >Patients</Typography>
+          <ListItemIcon><img src="/assets/icons/patientIcon.svg" alt="" /> </ListItemIcon> <Typography >Patients</Typography>
           </ListItemButton>
           <ListItemButton component="a" href="#simple-list">
-            <Typography >Products</Typography>
+          <ListItemIcon> <img src="/assets/icons/productIcon.svg" alt="" /> </ListItemIcon><Typography >Products</Typography>
           </ListItemButton>
           <ListItemButton component="a" href="#simple-list">
-            <Typography >Reports</Typography>
+          <ListItemIcon><img src="/assets/icons/reportIcon.svg" alt="" /> </ListItemIcon><Typography >Reports</Typography>
           </ListItemButton>
           <ListItemButton component="a" href="#simple-list">
-            <Typography >Purchase Orders</Typography>
+          <ListItemIcon> <img src="/assets/icons/purchaseOrder.svg" alt="" /></ListItemIcon><Typography >Purchase Orders</Typography>
           </ListItemButton>
           <ListItemButton component="a" href="#simple-list">
-            <Typography >Product Transactions</Typography>
+          <ListItemIcon> <img src="/assets/icons/productTransaction.svg" alt="" /> </ListItemIcon><Typography >Product Transactions</Typography>
           </ListItemButton>
             </ListItem>
         </List>
