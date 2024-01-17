@@ -2,45 +2,68 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import { styled } from '@mui/system';
 import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
+import Box from '@mui/material/Box';
 
 const CustomCardContent = styled(CardContent)({
-    padding: '0px 16px 16px 70px',
+  padding: '0px 16px 16px 70px',
 
-  });
+});
 
-  const CustomCardHeader = styled(CardHeader)({
-    display:'flex',
-    padding: '16px 14px 0px 14px',
-    alignItems:'center'
+const CustomCardHeader = styled(CardHeader)({
+  display: 'flex',
+  padding: '16px 14px 0px 14px',
+  alignItems: 'center'
 
-  });
+});
+interface RecipeReviewCardProps {
+  cardImage: string,
+  card_heading: string,
+  card_arrow: string
 
-export default function RecipeReviewCard() {
+}
+
+
+
+
+const RecipeReviewCard: React.FC<RecipeReviewCardProps> = (props) => {
+  const { cardImage, card_heading, card_arrow } = props;
 
 
   return (
     <Card sx={{ maxWidth: '48%' }}>
       <CustomCardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
+         avatar={
+          <img src={cardImage} alt="avatar" />
+        }
+        title={
+          <Typography variant="h4">
+            {card_heading}
+          </Typography>
         }
 
-        title="Shrimp and Chorizo Paella"
+        
       />
 
       <CustomCardContent>
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          together.
         </Typography>
-      </CustomCardContent>
+        <Box sx={{display:'flex'  , marginTop:'10px'}}>
+        <img src="/assets/icons/arrowLine.svg" alt="" style={{width:'21px' , height:'21px'}} />
+        <Typography variant="h5" sx={{color:'#585CE4'}}>
+        {card_arrow}
+        </Typography>
 
+
+        
+
+        </Box>
+
+      </CustomCardContent>
     </Card>
   );
 }
+
+export default RecipeReviewCard;

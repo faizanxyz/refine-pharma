@@ -32,38 +32,61 @@ const Dashboard: React.FC = () => {
                 <Box sx={{ flex: '2' }}>
                     <Box>
 
-                        <Box sx={{ display: 'flex', gap: '13px', flexWrap: 'wrap' }}>
-                            <RecipeReviewCard
+                        <Box sx={{ display: 'flex'}}>
+                        <RecipeReviewCard
+                                cardImage="/assets/icons/orderCardIcon.svg"
+                                card_heading="Order"
+                                card_arrow="View order"
                             />
-                            <RecipeReviewCard />
-                            <RecipeReviewCard />
-                            <RecipeReviewCard />
-                            <Box>
+
+
+                            <RecipeReviewCard
+                                cardImage="/assets/icons/productCardIcon.svg"
+                                card_heading="Product"
+                                card_arrow="View Product"
+                            />
+                        </Box>
+                        <Box sx={{ display: 'flex'}}>
+                            <RecipeReviewCard
+                                cardImage="/assets/icons/patientCardIcon.svg"
+                                card_heading="Patients"
+                                card_arrow="View Patients"
+                            />
+                            <RecipeReviewCard
+                                cardImage="/assets/icons/precriptionCardIcon.svg"
+                                card_heading="Private Prescription Register"
+                                card_arrow="View Website" />
+                                
+                        </Box>
+                        <Box sx={{display:'flex'}}>
                                 <DashbordLowerSec />
                             </Box>
-                        </Box>
-
+                        
                     </Box>
+                    
                 </Box>
                 <Box sx={{ flex: '1' }}>
-                    <Box sx={{ display: 'flex', backgroundColor: 'white', height: '6%' }}>
-                        <Typography variant="h4">Overall Status</Typography>
-                        <Typography variant="h4">Overall Status</Typography>
 
-
+                    <Box sx={{ display: 'flex', backgroundColor: 'white', height: '6%', padding: '13px 10px', gap: '6px' }}>
+                        <img src='/assets/icons/ToptListIcon.svg' style={{ width: '20px', height: '20px' }} alt="" />
+                        <Typography variant="h4">Overall Status</Typography>
                     </Box>
-                    <Divider />
-
                     <TopTrend /><Divider />
                     <TopTrend /><Divider />
                     <TopTrend /><Divider />
                     <TopTrend /><Divider />
 
-                    <Box sx={{ display: 'flex', backgroundColor: 'white', height: '6%' }}>
-                        <Typography variant="h4">Overall Status</Typography>
-
-
+                    <Box sx={{
+                        display: 'flex',
+                        backgroundColor: 'white',
+                        height: '6%',
+                        alignItems: 'center',  // Center vertically
+                        justifyContent: 'center',  // Center horizontally
+                    }}>
+                        <img src="/assets/icons/arrowLine.svg" alt="" style={{ width: '21px', height: '21px' }} />
+                        <Typography variant="h5" sx={{ color: '#585CE4', marginLeft: '8px' }}>Overall Status</Typography>
                     </Box>
+
                 </Box>
             </Box>
         </>

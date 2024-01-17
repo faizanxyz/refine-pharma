@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   typography: {
     fontFamily: 'Inter', 
-    fontSize: 12.2, 
+    fontSize: 13, 
     h1: {
       fontSize: '2.5rem', 
     },
