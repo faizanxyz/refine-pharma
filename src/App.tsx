@@ -1,9 +1,9 @@
 import './App.css';
-import MainPage from './Components/mainPage/mainPage';
+import MainPage from './components/mainPage/mainPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './Components/Dashboard';
-import Login from './Components/Login';
-import Order from './Components/Order';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import Order from './components/Order';
 
 function App() {
   
