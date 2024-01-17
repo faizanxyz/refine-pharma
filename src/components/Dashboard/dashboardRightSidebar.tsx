@@ -1,39 +1,53 @@
-import { Box, styled, Typography } from "@mui/material";
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import { styled } from '@mui/system';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 
-const Card_parent = styled(Box)({
-    display: 'flex',
-    gap: '15px',
-    backgroundColor: 'white',
-    width: '341px',
-    height: '129px',
-    padding: '20px',
-    margin: '0px'
+const CustomCardContent = styled(CardContent)({
+    padding: '0px 16px 16px 70px',
 
-})
+  });
 
-const TopTrend = () => {
-    //  let Dash_order = './assets/dash_order.png'
-    return (
+  const CustomCardHeader = styled(CardHeader)({
+    display:'flex',
+    padding: '16px 14px 0px 14px',
+    alignItems:'center'
 
-        <Card_parent >
-            <Box color="primary.contrastText">
-                <img src='/assets/top_pic.png' alt="" />
-            </Box>
-            <Box color="secondary.contrastText">
-                <Typography variant="h3" sx={{ paddingBottom: '5px' }}>
-                RC5776425
-                </Typography>
-                <Box >
-                    <Typography variant="h3" sx={{ width: '247px', height: '40px' }}>
-                    2021 "Profile Edition" Pocket <br /> Directory of the California Legislature
-                    </Typography>
-                    <Typography variant="h3" sx={{color:'#585CE4'}}>
-                    £120.00
-                    </Typography>
-                </Box>
-            </Box>
-        </Card_parent>
-    );
-};
+  });
 
-export default TopTrend;
+  const CustomCard = styled(Card)({
+    borderRadius:'0',
+    boxShadow:'none'
+
+  });
+  
+
+function TopTrend() {
+
+
+  return (
+    <CustomCard sx={{ maxWidth: '100%' }}>
+      <CustomCardHeader
+      avatar={
+        <img src='/assets/icons/TopProductIcon.svg' style={{width:'46px' , height:' 65px'}} />
+      }
+
+        title="RC5776425"
+      />
+
+      <CustomCardContent>
+        <Typography variant="h5" color="text.secondary">
+          This impressive paella is a perfect party dish and a fun meal to cook
+          together
+        </Typography>
+        
+        <Typography variant="h5" sx={{color:'#585CE4'}}>
+        £120.00
+        </Typography>
+      </CustomCardContent>
+
+    </CustomCard>
+  );
+}
+export default TopTrend

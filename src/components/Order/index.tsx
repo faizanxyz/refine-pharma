@@ -4,36 +4,24 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import UseFormControl from '../CustomInput/input';
 import SelectField from '../SelectField';
-
+import OrderResult from '../OrderResult';
 
 const Boxhead = styled(Box)({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   borderBottom: '1px solid #CFD8E3',
+  width:'100%',
+  padding:'8px 24px'
+  
 });
 
 const Boxcustom = styled(Button)({
   gap: '10px',
   borderRadius: '3px',
+  
 });
 
-const Boxtext = styled(Box)({
-  display: 'flex',
-  justifyContent: 'center', 
-  alignItems: 'center',
-  marginRight: '20px',
-  marginTop: '60px',
-});
-
-const Boxtextsec = styled(Box)({
-  marginTop: '20px',
-  marginRight: '20px',
-  display: 'flex',
-  justifyContent: 'center',
-  gap: '30px',
-  alignItems: 'center',
-});
 
 function Order() {
   const options = [ 
@@ -45,36 +33,42 @@ function Order() {
   ];
   return (
     <>
-      <Boxhead>
-        <Typography variant="h3" style={{ fontSize: '20px', paddingLeft: '20px' }}>
+        <Box sx={{backgroundColor:'white',borderRadius:'5px'}}>
+          <Boxhead>
+        <Typography variant="h3" style={{ fontSize: '20px'}}>
           Search
         </Typography>
 
         <Boxcustom>
-          <Button variant="outlined" size="small" sx={{ color: 'gray', borderColor: '#CFD8E3', fontSize: '12px' }}>
+          <Button variant="outlined" size="small" sx={{ color: 'gray', borderColor: 
+'#CFD8E3', fontSize: '12px',borderRadius:'5px',height:'25px' }}>
             Reset
           </Button>
-          <Button variant="outlined" size="small" sx={{ color: 'gray', borderColor: '#CFD8E3', fontSize: '12px' }}>
+          <Button  variant="outlined" size="small" sx={{ color: 'gray', borderColor: 
+'#CFD8E3', fontSize: '12px',borderRadius:'5px',height:'25px' }}>
             Hide
           </Button>
         </Boxcustom>
       </Boxhead>
-      <Boxtext>
-      <SelectField optionsData={options}/>
-        <Box>
-          <UseFormControl label="Website Order ID:" />
-        </Box>
-        <Box>
-          <UseFormControl label="Order Number:" />
-        </Box>
-      </Boxtext>
-      <Boxtextsec>
-       <SelectField optionsData={options} />
-       <SelectField optionsData={options}/>
-        <Box>
-          <UseFormControl label="Customer Name:" />
-        </Box>
-      </Boxtextsec>
+
+      <Box sx={{display:'flex',flexDirection:'column',gap:'20px',p:'30px'}}>
+      <Box sx={{display:'flex',columnGap:'15px'}}>
+      <Box sx={{width:'100%'}}><SelectField optionsData={options}/></Box>
+      <Box sx={{width:'100%'}}><UseFormControl label='data1'/></Box>
+      <Box sx={{width:'100%'}}><UseFormControl label='data1'/></Box>
+      </Box>
+
+      <Box sx={{display:'flex',columnGap:'15px'}}>
+      <Box sx={{width:'100%'}}><SelectField optionsData={options}/></Box>
+      <Box sx={{width:'100%'}}><SelectField optionsData={options}/></Box>
+      <Box sx={{width:'100%'}}><UseFormControl label='data1'/></Box>
+      </Box>
+      </Box>
+      </Box>
+      
+      <Box>
+        <OrderResult />
+      </Box>
     </>
   );
 }
