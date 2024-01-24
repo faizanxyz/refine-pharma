@@ -210,18 +210,18 @@ export default function MiniDrawer() {
           <NavLink to='/mainPage/order'>   <ListItemButton >
           <ListItemIcon> <img src="/assets/icons/orderIcon.svg" alt="" /></ListItemIcon> <Typography >Orders</Typography>
           </ListItemButton></NavLink>
-          <ListItemButton component="a" href="#simple-list">
+          <NavLink to='/mainPage/patient'> <ListItemButton>
           <ListItemIcon><img src="/assets/icons/patientIcon.svg" alt="" /> </ListItemIcon> <Typography >Patients</Typography>
-          </ListItemButton>
-          <ListItemButton component="a" href="#simple-list">
+          </ListItemButton></NavLink>
+          <NavLink to='/mainPage/product'> <ListItemButton component="a" href="#simple-list">
           <ListItemIcon> <img src="/assets/icons/productIcon.svg" alt="" /> </ListItemIcon><Typography >Products</Typography>
-          </ListItemButton>
+          </ListItemButton></NavLink>
           <ListItemButton component="a" href="#simple-list">
           <ListItemIcon><img src="/assets/icons/reportIcon.svg" alt="" /> </ListItemIcon><Typography >Reports</Typography>
           </ListItemButton>
-          <ListItemButton component="a" href="#simple-list">
+         <NavLink to={'/mainPage/purchase-order'}><ListItemButton >
           <ListItemIcon> <img src="/assets/icons/purchaseOrder.svg" alt="" /></ListItemIcon><Typography >Purchase Orders</Typography>
-          </ListItemButton>
+          </ListItemButton></NavLink> 
           <ListItemButton component="a" href="#simple-list">
           <ListItemIcon> <img src="/assets/icons/productTransaction.svg" alt="" /> </ListItemIcon><Typography >Product Transactions</Typography>
           </ListItemButton>
@@ -229,9 +229,9 @@ export default function MiniDrawer() {
         </List>
        
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 2, p: 3 ,backgroundColor:'#F1F2F4'}}>
+      <Box component="main" sx={{ flexGrow: 2, p: 3 ,backgroundColor:'#F1F2F4',height:'100%'}}>
         <DrawerHeader />
-        <Box >
+        <Box sx={{pb:3}}>
           <Outlet/>
         </Box>
         

@@ -1,15 +1,17 @@
 import { Box,Typography,styled } from "@mui/material";
 import Button from '@mui/material/Button';
+// import Table from "../Table/table";
+// import DataTableComponent from "../Table/table";
 // import Bulk from "../../Assets/bulk";
+import BasicTable from "../Table/table";
 
 
 function OrderResult(){
 const BoxMain = styled(Box)({
 display:'flex',
 justifyContent:'space-between',
-paddingTop:'20px',
-paddingLeft:'20px',
-paddingRight:'20px',
+padding:'20px',
+
 
 
 
@@ -27,19 +29,19 @@ paddingRight:'20px',
     const BoxOrder = styled(Box)({
       backgroundColor:'white',
       marginTop:'30px',
-      height:'400px',
+      // height:'400px',
       borderRadius:'6px'
     })
-    const Boximg = styled(Box)({
-     width:'200px',
-     height:'200px',
-     margin:'auto',
-     marginTop:'80px'
+    // const Boximg = styled(Box)({
+    //  width:'200px',
+    //  height:'200px',
+    //  margin:'auto',
+    //  marginTop:'80px'
    
-    })
-    const Boxtext = styled(Box)({
-      textAlign:'center'
-    }) 
+    // })
+    // const Boxtext = styled(Box)({
+    //   textAlign:'center'
+    // }) 
 return(
     <>
     <BoxOrder>
@@ -67,8 +69,11 @@ return(
 
 </BoxButton>
 </BoxMain>
+
+{/* <DataTableComponent /> */}
+<BasicTable/>
      
-<Boximg>
+{/* <Boximg>
 <img src="/assets/icons/searchLogo.svg" alt="" />
 <Boxtext>
 <Typography sx={{color:'blue',fontWeight:'700'}} >
@@ -78,7 +83,7 @@ return(
     What you searched unfortunately not Exits
 </Typography>
 </Boxtext>
-</Boximg>
+</Boximg> */}
 </BoxOrder>
 
 
