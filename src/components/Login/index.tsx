@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { useNavigate } from "react-router-dom";
+<<<<<<< Updated upstream
 
 const Login: React.FC = () => {
     const navigate = useNavigate();
@@ -11,6 +12,50 @@ const Login: React.FC = () => {
     function login_navigate() {
         navigate("/mainPage");
     }
+=======
+import useAuth, { AuthResponse } from '../Hooks/useAuth'
+
+const Login: React.FC = () => {
+
+  const navigate = useNavigate();
+
+  const { postData, isLoading } = useAuth(); // Initialize the useAuth hook
+
+  const [credentials, setCredentials] = useState({
+    username: '',
+    password: '',
+  });
+
+ 
+
+  const inputHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setCredentials({ ...credentials, [name]: value });
+  };
+
+  const login_navigate = async () => {
+
+    try {
+        const response: AuthResponse = await postData(credentials);
+ 
+        const { access } = response;
+  
+        localStorage.setItem('accessToken', access);
+  
+        // Navigate to the desired page
+        navigate('/mainPage/order');
+      } catch (error) {
+        console.error('Login failed', error);
+      }
+    
+  };
+
+ 
+
+
+>>>>>>> Stashed changes
     return (
         <Box
             display="flex"
@@ -75,14 +120,14 @@ const Login: React.FC = () => {
                                     height:30,
                                    width:'330px',
                                     "& .MuiInputBase-input": {
-                                        height: "9px", // adjust as needed
+                                        height: "9px", 
                                         borderRadius: "5px",
                                         border: "1px solid #ccc",
                                     },
                                      
-                                    "&::placeholder": { // Target placeholder text
-                                        fontSize: 5, // Adjust font size as needed
-                                        color: 'gray', // Optional: adjust placeholder color
+                                    "&::placeholder": { 
+                                        fontSize: 5,
+                                        color: 'gray', 
                                       },
                                 }}
                                 placeholder='Enter your password'
@@ -96,10 +141,15 @@ const Login: React.FC = () => {
                                 backgroundColor: '#262627',
                                 color: 'white',
                                 marginTop: '130px',
+                                '&:hover': {
+                                    backgroundColor: '#404041',  // Change the background color on hover
+                                    cursor: 'pointer',  // Change cursor to pointer on hover
+                                },
                             }}
                             onClick={login_navigate}
+                            disabled={isLoading} 
                         >
-                            Log in
+                           {isLoading ? 'Logging in...' : 'Log in'}
                         </Button>
                     </Box>
                 </Box>

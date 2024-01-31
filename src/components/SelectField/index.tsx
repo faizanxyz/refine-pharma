@@ -33,9 +33,14 @@ fontSize: '16px', fontWeight: '400', }}>
         },
       })}
       id="mySelect"
+      name='website'
       defaultValue={options[0]}
+<<<<<<< Updated upstream
       onChange={(selectedOption) => console.log('Selected Option:', 
 selectedOption)}
+=======
+      onChange={(e)=>handleSelect(e)}
+>>>>>>> Stashed changes
       options={options}
       styles={{
         control: (provided) => ({

@@ -4,7 +4,14 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import UseFormControl from '../CustomInput/input';
 import SelectField from '../SelectField';
+<<<<<<< Updated upstream
 import OrderResult from '../OrderResult';
+=======
+import DataTableComponent from "../DataTable/Datatablee";
+import useOrders from '../Hooks/useOrders';
+import Delete from '../Delete';
+
+>>>>>>> Stashed changes
 
 const Boxhead = styled(Box)({
   display: 'flex',
@@ -22,6 +29,7 @@ const Boxcustom = styled(Button)({
   
 });
 
+<<<<<<< Updated upstream
 
 function Order() {
   const options = [ 
@@ -31,6 +39,89 @@ function Order() {
     { value: 'Dispensed', label: 'Dispensed' },
     { value: 'Canceiled', label: 'Cancelled' },
   ];
+=======
+const Boximg = styled(Box)({
+  display:'flex',
+  gap:'6px',
+  alignItems:'center',
+  borderBottom:'1px solid lightgray',
+  paddingTop:'7px',
+  paddingBottom:'7px',
+  margin:'auto',
+  marginBottom:'10px'
+  
+   
+ })
+
+ const options = [ 
+    
+  { value: 'website', label: 'All' },
+  { value: 'website', label: 'Pending' },
+  { value: 'website', label: 'Dispensed' },
+  { value: 'wibsite', label: 'Cancelled' },
+];
+
+interface CustomEventType {
+  value: string;
+  label: string;
+}
+
+
+function Order() {
+  const { orders, isLoading, isError, error } = useOrders();
+
+  const handelOrderFilter = (event:CustomEventType | null)=>{
+      console.log(event);
+      
+  }
+  // Columns for DataTableComponent
+  const columns = [
+    {
+      name: 'Customer Name:',
+      selector: (row) => row.id,
+    },
+    {
+      name: 'Website Order:',
+      selector: (row) => row.website_order_id
+    },
+    {
+      name: 'Website ',
+      selector: (row) => row.price,
+    },
+    {
+      name: 'Order Date',
+      selector: (row) => row.order_date,
+    },
+    {
+      name: 'Order Number',
+      selector: (row) => row.type,
+    },
+    {
+      name: 'Status',
+      selector: (row) => row.Status,
+    },
+    {
+      name: 'Shippment Status',
+      selector: (row) => row.shiping_status,
+    },
+    {
+      name: 'Action',
+      selector: (row) => <Delete/>
+    },
+   
+  ];
+  console.log(orders)
+  const data = orders?.results?.map((row) => ({
+    id: row.id,
+    website_order_id: row.website_order_id,
+    price: row.cart_tax,
+    order_date: row.order_date,
+    Status: row.status,
+    shiping_status: row.shipping_status,
+    
+    
+  })) || [];
+>>>>>>> Stashed changes
   return (
     <>
         <Box sx={{backgroundColor:'white',borderRadius:'5px'}}>
@@ -53,9 +144,16 @@ function Order() {
 
       <Box sx={{display:'flex',flexDirection:'column',gap:'20px',p:'30px'}}>
       <Box sx={{display:'flex',columnGap:'15px'}}>
+<<<<<<< Updated upstream
       <Box sx={{width:'100%'}}><SelectField optionsData={options}/></Box>
       <Box sx={{width:'100%'}}><UseFormControl label='data1'/></Box>
       <Box sx={{width:'100%'}}><UseFormControl label='data1'/></Box>
+=======
+      
+      <Box sx={{width:'100%'}}><SelectField options={options} label='Website :' handleSelect={(data:CustomEventType | null)=>handelOrderFilter(data)}/></Box>
+      <Box sx={{width:'100%'}}><UseFormControl label='Website Order ID :' handleSelect={(data:CustomEventType | null)=>handelOrderFilter(data)}/></Box>
+      <Box sx={{width:'100%'}}><UseFormControl label='Order number :'/></Box>
+>>>>>>> Stashed changes
       </Box>
 
       <Box sx={{display:'flex',columnGap:'15px'}}>
@@ -66,9 +164,8 @@ function Order() {
       </Box>
       </Box>
       
-      <Box>
-        <OrderResult />
-      </Box>
+    <DataTableComponent data={data} columns={columns} />
+   
     </>
   );
 }

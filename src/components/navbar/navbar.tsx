@@ -16,16 +16,17 @@ import ListItemButton from '@mui/material/ListItemButton';
 import { ListItemIcon } from '@mui/material';
 import { Button } from '@mui/material';
 import { Link, Outlet } from 'react-router-dom';
+import LongMenu from '../Options';
 
 const drawerWidth = 247;
 
 const LogoBox = styled(Box)({
-  columnGap:'8px',
+  columnGap:'9px',
   display:'flex',
   alignItems:'center',});
 
   const TextBox = styled(Box)({
-    columnGap:'8px',
+    columnGap:'3px',
     display:'flex',
     alignItems:'center'});
 
@@ -123,6 +124,8 @@ export default function MiniDrawer() {
     setOpen(false);
   };
 
+ 
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -132,14 +135,16 @@ export default function MiniDrawer() {
       <Container maxWidth="xl" >
         <Toolbar disableGutters sx={{display:'flex', justifyContent:'space-between'}}>
         <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-          <LogoBox >
+          <LogoBox>
           <img src="/assets/refinelogo.svg" width='40px' alt=""/>
           <Box sx={{flex:'1'}}>
-          <TextBox> <Typography sx={{fontSize:'16px',fontWeight:'600'}}>Refine Germany </Typography><img src="/assets/pepicons-pop_dots-y.svg" alt="" /></TextBox>
+          <TextBox> <Typography sx={{fontSize:'16px',fontWeight:'600'}}>Refine Germany </Typography> <LongMenu/></TextBox>
           <Typography sx={{fontSize:'14px'}}>Some Text Here</Typography>
           </Box>
+         
             </LogoBox>
             </Box>
+            
 
             <Box
             sx={{
@@ -151,7 +156,7 @@ export default function MiniDrawer() {
             </Box>
           
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', } }}>
             {open ? <IconButton
               size="large"
               aria-label="account of current user"
@@ -166,13 +171,15 @@ export default function MiniDrawer() {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              color="inherit"
+              color="inherit"         
               onClick={handleDrawerOpen}
-            >
+              
+            >   
               <MenuIcon />
             </IconButton>}
             
           </Box>
+          
 
           <Box
              sx={{
@@ -184,6 +191,7 @@ export default function MiniDrawer() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+             
             }}
             >
           <img src="/assets/maxeniusLogo.png"  alt=""/>

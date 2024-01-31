@@ -1,9 +1,47 @@
 import { Box,Typography,styled } from "@mui/material";
 import Button from '@mui/material/Button';
 // import Bulk from "../../Assets/bulk";
+<<<<<<< Updated upstream
+=======
+import useOrders from "../Hooks/useOrders";
+import { useEffect, useState } from "react";
+import DataTables from "../DataTable/Datatablee";
+>>>>>>> Stashed changes
 
+
+const BoxMain = styled(Box)({
+    display:'flex',
+    justifyContent:'space-between',
+    padding:'20px', 
+    })    
+    const BoxResult = styled(Box)({
+            flex:'1',
+            color:'#848585',
+            fontWeight:'600'
+        })
+        
+        const BoxButton = styled(Box)({
+            
+        })
+        const BoxOrder = styled(Box)({
+          backgroundColor:'white',
+          marginTop:'30px',
+          // height:'400px',
+          borderRadius:'6px'
+        })
+        // const Boximg = styled(Box)({
+        //  width:'200px',
+        //  height:'200px',
+        //  margin:'auto',
+        //  marginTop:'80px'
+       
+        // })
+        // const Boxtext = styled(Box)({
+        //   textAlign:'center'
+        // }) 
 
 function OrderResult(){
+<<<<<<< Updated upstream
 const BoxMain = styled(Box)({
 display:'flex',
 justifyContent:'space-between',
@@ -40,13 +78,22 @@ paddingRight:'20px',
     const Boxtext = styled(Box)({
       textAlign:'center'
     }) 
+=======
+    const { orders, isLoading, isError, error } = useOrders();
+    const [ orderList , setOrderList ] = useState('')
+
+    useEffect(()=>{
+        setOrderList(orders);
+      },[orders ])
+
+>>>>>>> Stashed changes
 return(
     <>
     <BoxOrder>
 <BoxMain>
     <BoxResult >
         <Typography fontSize={'14px'}>     
-            0 Result
+            {orders?.results?.length} Result
         </Typography>
         </BoxResult>
         <BoxButton>
@@ -61,14 +108,17 @@ return(
         </svg>}>
   Bulk invoices
 </Button>
-
-
-
-
 </BoxButton>
 </BoxMain>
+<<<<<<< Updated upstream
      
 <Boximg>
+=======
+<DataTables/>
+{/* <DataTableComponent /> */}
+
+{/* <Boximg>
+>>>>>>> Stashed changes
 <img src="/assets/icons/searchLogo.svg" alt="" />
 <Boxtext>
 <Typography sx={{color:'blue',fontWeight:'700'}} >
@@ -78,7 +128,13 @@ return(
     What you searched unfortunately not Exits
 </Typography>
 </Boxtext>
+<<<<<<< Updated upstream
 </Boximg>
+=======
+</Boximg> */}
+
+
+>>>>>>> Stashed changes
 </BoxOrder>
 
 
