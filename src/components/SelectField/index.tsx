@@ -8,20 +8,25 @@ interface Option {
 }
 
 interface SelectFieldProps {
-  optionsData: Option[];
+  options: Option[];
+  label: string;
+  handleSelect: (selectedOption: Option | null) => void;
 }
 
-function SelectField({optionsData}: SelectFieldProps){
+function SelectField({options,label,handleSelect}: SelectFieldProps){
 
-    const options = optionsData
+    
+
+    
 
 return(
     <Box sx={{width:'100%'}}>
-    <label htmlFor="mySelect" style={{ paddingLeft: '10px', color: '#848485', 
+    <label htmlFor="mySelect" style={{color: '#848485', 
 fontSize: '16px', fontWeight: '400', }}>
-      Website :
+      {label}
     </label>
     <Select
+    
     theme={(theme) => ({
         ...theme,
         borderRadius: 0,
@@ -34,8 +39,7 @@ fontSize: '16px', fontWeight: '400', }}>
       })}
       id="mySelect"
       defaultValue={options[0]}
-      onChange={(selectedOption) => console.log('Selected Option:', 
-selectedOption)}
+      onChange={handleSelect}
       options={options}
       styles={{
         control: (provided) => ({

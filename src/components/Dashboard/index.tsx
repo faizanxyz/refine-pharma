@@ -1,7 +1,5 @@
 import { Box, styled } from '@mui/system';
 import Typography from '@mui/material/Typography';
-
-import DashbordLowerSec from './dashboardPointListing';
 import TopTrend from './dashboardRightSidebar';
 import Divider from '@mui/material/Divider';
 import RecipeReviewCard from './myCard';
@@ -12,11 +10,7 @@ const Boxhead = styled(Box)({
     alignItems: 'center',
     borderBottom: '1px solid #CFD8E3',
 });
-
-
 const Dashboard: React.FC = () => {
-
-
     return (
         <>
             <Boxhead>
@@ -27,13 +21,12 @@ const Dashboard: React.FC = () => {
             <Box sx={{ py: '15px' }}>
                 <Typography variant="h4">Overall Status</Typography>
             </Box>
-
             <Box sx={{ display: 'flex' }}>
                 <Box sx={{ flex: '2' }}>
                     <Box>
 
-                        <Box sx={{ display: 'flex'}}>
-                        <RecipeReviewCard
+                        <Box sx={{ display: 'flex' , gap:'10px' }}>
+                            <RecipeReviewCard
                                 cardImage="/assets/icons/orderCardIcon.svg"
                                 card_heading="Order"
                                 card_arrow="View order"
@@ -46,7 +39,7 @@ const Dashboard: React.FC = () => {
                                 card_arrow="View Product"
                             />
                         </Box>
-                        <Box sx={{ display: 'flex'}}>
+                        <Box sx={{ display: 'flex' ,   gap:'10px' , marginTop:'10px'}}>
                             <RecipeReviewCard
                                 cardImage="/assets/icons/patientCardIcon.svg"
                                 card_heading="Patients"
@@ -56,14 +49,8 @@ const Dashboard: React.FC = () => {
                                 cardImage="/assets/icons/precriptionCardIcon.svg"
                                 card_heading="Private Prescription Register"
                                 card_arrow="View Website" />
-                                
                         </Box>
-                        <Box sx={{display:'flex'}}>
-                                <DashbordLowerSec />
-                            </Box>
-                        
                     </Box>
-                    
                 </Box>
                 <Box sx={{ flex: '1' }}>
 
@@ -92,5 +79,4 @@ const Dashboard: React.FC = () => {
         </>
     );
 };
-
 export default Dashboard;
